@@ -25,12 +25,21 @@ sepalL <- iris$Sepal.Length #Guarda en sepalL, la columna
 sepalW <- iris$Sepal.Width
 petalL <- iris$Petal.Length
 petalW <- iris$Petal.Width
+sepalL <- iris$Sepal.Length
 
 #----- separa clases
-clases <- iris$Species #guarda los datos de las clases
-#--------
-#grafica 3 caracteristicas x,y,z. Agrupados por groups
-scatter3d(x = sepalW, y = sepalL, z = petalL, groups = clases,
+clases <- iris$Species #guarda los datos de las clasesscatter3d(x = sepalW, y = sepalL, z = petalL, groups = clases,
           surface=FALSE, ellipsoid = TRUE,
           surface.col = c("#23fca9", "#ef0000","#ef0ff0"),sphere.size = 1.2)
+#--------
+#grafica 3 caracteristicas x,y,z. Agrupados por groups
 
+scatter3d(x=sepalL, y=petalW, z=sepalW, point.col="blue", surface=FALSE)
+scatter3d(x=sepalL, y=petalW, z=sepalW, groups=iris$Species, gird=FALSE, fit="smooth")
+scatter3d(x=sepalL, y=petalW, z=sepalW, group=iris$Species, grid=FALSE, surface=FALSE)
+scatter3d(x=sepalL, y=petalW, z=sepalW, group=iris$Species, grid=FALSE, surface=FALSE,
+          ellipsoid=TRUE, urface.col=c("#999999", "#E69F00", "#56B4E9"))
+scatter3d(x=sepalL, y=petalW, z=sepalW, group=iris$Species, grid=FALSE, surface=FALSE,
+          ellipsoid=TRUE, axis.col=c"black", "black", "black"))
+scatter3d(x=sepalL, y=petalW, z=sepalW, group=iris$Species, surface=FALSE,
+          labels=rownames(iris), id.n=nrow(iris))
